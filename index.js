@@ -47,6 +47,7 @@ app.get('/', function(req, res) {
     res.render('index', wordLetters);
 })
 
+console.log(wordLetters);
 
 // app.get("/", function(req, res) {
 //     if (Object.keys(req.session.credntls) === 'username') {
