@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 * {
     padding: 0;
     margin: 0;
@@ -5,6 +6,7 @@
     font-size: 100%;
     background: transparent;
     box-sizing: content-box;
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -36,7 +38,7 @@ body {
 
 .main {
     background-color: white;
-    width: 50vw;
+    width: 80vw;
     height: 60vh;
     margin-left: auto;
     margin-right: auto;
@@ -47,7 +49,7 @@ body {
 }
 
 #welcome {
-    padding-top: 10%;
+    padding-top: 5%;
     font-size: 30px;
 }
 
@@ -60,7 +62,7 @@ body {
 .letter {
     height: 40px;
     width: 40px;
-    margin: 5% 8px 8px 8px;
+    margin: 4% 8px 8px 8px;
     border-bottom: 2px solid grey;
 }
 
@@ -70,12 +72,17 @@ body {
 }
 
 input[type="text"] {
+    text-align: center;
     height: 40px;
     width: 40px;
     border: 1px solid grey;
 }
 
-input[type="submit"] {
+label {
+    margin-right: 5px;
+}
+
+button {
     height: 40px;
     width: 100px;
     background-color: blueviolet;
@@ -85,7 +92,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button:hover {
     background-color: purple;
 }
 

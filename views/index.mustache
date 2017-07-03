@@ -2,49 +2,48 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Guess the Word!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
+    {{#tags}}
     <div class="header">
         <p id="title">Guess What!?!</p>
-        <p id="guessCounter"> This is where the number of guesses left goes.{{ guesses }} </p>
+        <p id="guessCounter"> Number of guesses left: {{ gameLife }} </p>
     </div>
 
     <div class="main">
         <p id="welcome">Guess the word!</p>
-        {{#wordLetters}}
+
         <div class="letterBoxs">
-            {{#wLetters}}
+            {{#guessWord}}
             <div class="letter">
                 <h1>{{.}}</h1>
             </div>
-            {{/wLetters}}
+            {{/guessWord}}
         </div>
-        {{/wordLetters}}
 
         <div class="guess">
+            {{#gameWin}}{{#gameLose}}
             <form action="/" method="POST">
-                <label for="letter">Guess a letter: </label> <input type="text" name="letter" size="1" maxlength="1"> <input type="submit" name="submit" value="submit" placeholder="Make a guess!">
+                <label for="letter">Guess a letter: </label> <input type="text" name="letter" size="1" maxlength="1"> <button type="submit" name="submit">maybe?</button>
             </form>
+            {{/gameLose}}{{/gameWin}} {{^gameWin}}
+            <label>You Won!</label> <button type="submit" name="again">Try Again!</button> {{/gameWin}} {{^gameLose}}
+            <label>You LOSER!</label> <button type="submit" name="again">Try Again!</button> {{/gameLose}}
         </div>
 
         <div class="letGuess">
             <p>Letters guessed:</p>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
-            <div class="letPick"></div>
+            {{#lettersBucket}}
+            <div class="letPick">{{.}}</div>
+            {{/lettersBucket}}
         </div>
     </div>
-
+    {{/tags}}
 </body>
 
 </html>
